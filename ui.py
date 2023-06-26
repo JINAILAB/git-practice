@@ -1,8 +1,6 @@
 from PyQt5.QtWidgets import (QApplication,QWidget,QPushButton,QVBoxLayout,
-                             QMessageBox, QPlainTextEdit, QHBoxLayout,
-                             QLineEdit, QComboBox)
+                             QMessageBox, QPlainTextEdit, QHBoxLayout)
 from PyQt5.QtGui import QIcon
-from PyQt5 import QtCore
 
 
 class View(QWidget):
@@ -18,20 +16,6 @@ class View(QWidget):
         self.btn1=QPushButton('Message',self)
         self.btn2=QPushButton('Clear',self)
         
-        self.le1=QLineEdit('0',self)
-        self.le1.setAlignment(QtCore.Qt.AlignRight)
-        
-        self.le2=QLineEdit('0',self)
-        self.le2.setAlignment(QtCore.Qt.AlignRight)
-        
-        self.cb = QComboBox(self)
-        self.cb.addItems(['+', '-', '*', '/'])
-        
-        hbox_formular = QHBoxLayout()
-        hbox_formular.addWidget(self.le1)
-        hbox_formular.addWidget(self.cb)
-        hbox_formular.addWidget(self.le2)
-        
         hbox = QHBoxLayout()
         hbox.addStretch(1)
         hbox.addWidget(self.btn1)
@@ -39,7 +23,6 @@ class View(QWidget):
         
         vbox=QVBoxLayout()
         vbox.addWidget(self.te1)
-        vbox.addLayout(hbox_formular)
         vbox.addLayout(hbox)
         vbox.addStretch(1)
         
